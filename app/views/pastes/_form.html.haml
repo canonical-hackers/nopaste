@@ -7,5 +7,7 @@
       %ul
         - @paste.errors.full_messages.each do |msg|
           %li= msg
+  = f.label :language
+  = f.select :language, Paste::LANGS.collect{ |l| [ l, l]}, {:selected => 'Text'}
   = f.text_area :content
   = f.submit
