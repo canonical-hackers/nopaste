@@ -1,0 +1,11 @@
+= form_for(@paste) do |f|
+  - if @paste.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@paste.errors.count, "error")
+        prohibited this paste from being saved:
+      %ul
+        - @paste.errors.full_messages.each do |msg|
+          %li= msg
+  = f.text_area :content
+  = f.submit

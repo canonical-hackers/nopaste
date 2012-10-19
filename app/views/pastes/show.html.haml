@@ -1,0 +1,8 @@
+%p#notice= notice
+
+:coderay
+  #!ruby 
+  #{@paste.content}
+ 
+= link_to 'Edit', edit_paste_path(@paste) 
+= link_to 'Back', pastes_path
