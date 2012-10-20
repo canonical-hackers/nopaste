@@ -7,6 +7,7 @@ gem 'haml'
 gem 'sass'
 gem 'coderay'
 gem 'haml-coderay'
+gem 'pg'
 
 
 # Gems used only for assets and not required
