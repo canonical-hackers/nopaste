@@ -1,5 +1,5 @@
 class Paste < ActiveRecord::Base
-  attr_accessible :content, :language
+  attr_accessible :content, :language, :author, :description
   validates_presence_of :content, :language 
   before_create :set_uuid
   

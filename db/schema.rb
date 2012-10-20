@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121019224641) do
+ActiveRecord::Schema.define(:version => 20121019235924) do
 
   create_table "pastes", :id => false, :force => true do |t|
-    t.string   "uuid",       :limit => 36
+    t.string   "uuid",        :limit => 36
     t.text     "content"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.string   "language",                 :default => "text"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "language",                  :default => "text"
+    t.string   "description"
+    t.string   "author"
   end
 
 end

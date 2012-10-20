@@ -1,6 +1,6 @@
 Nopaste::Application.routes.draw do
   resources :pastes 
 
-  root :to => "pastes#new"
+  root :to => "pastes#index"
 
 end

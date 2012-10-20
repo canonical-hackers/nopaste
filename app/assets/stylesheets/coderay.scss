@@ -1,0 +1,11 @@
+.CodeRay { 
+  background-color: #FFF;
+  border-radius: 2px;
+  margin: 15px;
+  padding: 3px;
+  box-shadow: 0 0 10px black;
+  .line-numbers { 
+    margin: 0 10px 0 5px;
+    a { text-decoration: none; }
+  }
+}

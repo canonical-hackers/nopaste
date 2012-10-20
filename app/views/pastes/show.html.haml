@@ -1,8 +1,12 @@
-%p#notice= notice
-
-:coderay
-  #!#{@paste.language} 
-  #{@paste.content}
+%section[@paste]
+  %h2 
+    = @paste.description
+    - unless @paste.language == 'Text'
+      (#{@paste.language})
+  %h3 
+    Pasted #{time_ago_in_words(@paste.created_at)} ago by #{@paste.author || 'Anonymous'}  
+  :coderay
+    #!#{@paste.language} 
+    #{@paste.content}
  
 = link_to 'Edit', edit_paste_path(@paste) 
-= link_to 'Back', pastes_path
