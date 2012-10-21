@@ -5,10 +5,9 @@ class Paste < ActiveRecord::Base
   
   self.primary_key = :uuid
 
-  LANGS = ['C', 'CPlusPlus', 'CSS', 'Clojure', 'Debug', 'Delphi', 'Diff', 
-           'ERB', 'Groovy', 'HAML', 'HTML', 'JSON', 'Java', 'JavaScript', 
-           'PHP', 'Python', 'Raydebug', 'Ruby', 'SQL', 'Scanner', 'Text', 
-           'XML', 'YAML']
+
+  LANGS = ['Text', 'Ruby', 'Perl', 'Python', 'PHP', 'C', 'C++', 'Java', 
+           'Bash', 'CSS', 'HTML', 'Javascript', 'JSON', 'YAML']
 
   def set_uuid
     self.uuid = rand_uuid
