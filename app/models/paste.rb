@@ -1,7 +1,9 @@
 class Paste < ActiveRecord::Base
-  attr_accessible :content, :language, :author, :description
-  validates_presence_of :content, :language 
+  attr_accessible :content, :language, :author, :description, :original_id
+
+  validates_presence_of :content, :language
   before_create :set_uuid
+  belongs_to :original, :class_name => 'Paste', :foreign_key => :original_id
   
   self.primary_key = :uuid
 
@@ -12,6 +14,10 @@ class Paste < ActiveRecord::Base
   def set_uuid
     self.uuid = rand_uuid
   end
+
+  def forks
+    Paste.where(:original_id => self.uuid) 
+  end  
 
   private    
     

@@ -26,27 +26,47 @@ nav {
   height: 30px;
   background-color: #444;
   position: fixed;
+  padding-right: 20px;
   width: 100%;
-  left: 0;
+  right: 0;
   top: 0;
   box-shadow: 0 0 10px black;
-  ul { 
-    margin: 5px 0;
-    list-style: none;
-    li { 
-      display: inline;
+  .link { 
+    margin: 6px 10px;
+    float: right;
+    background-repeat: no-repeat;
+    a {
+      padding-left: 24px;
+      text-decoration: none;
+      color: white; 
     }
   }
+  .fork { background-image: url('link_fork.png'); }
+  .home { background-image: url('link_home.png'); }
+  .new  { background-image: url('link_new.png'); }
 }
 
 article {  
   background-color: $bg_color_sub; 
-  width: 700px;
+  width: 950px;
   box-shadow: 0 0 2px white;
   border-radius: 3px;
   margin: 75px auto;
   padding: 15px;
   margin: 40px auto;
+}
+h2 {
+  font-weight: normal;
+  border-bottom: 2px solid #666;
+  color: white;
+  font-size: 28px;
+  margin: 20px 0px 5px;
+}
+h3 { 
+  font-weight: normal;
+  margin: 0 0 10px 20px;
+  font-size: 14px;
+  font-style: italic;
 }
 
 a { 
@@ -56,12 +76,4 @@ a {
   } 
 }
 
-.nopaste_form { 
-  textarea { 
-    width: 665px;
-    border: none;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 2px;
-  }
-}
+

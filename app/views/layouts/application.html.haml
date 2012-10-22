@@ -9,9 +9,13 @@
     %header
       #notice= notice
     %nav
-      %ul
-        %li= link_to 'Home', root_path
-        %li= link_to 'New Paste', new_paste_path
+      - if @paste.present? 
+        - if @paste.uuid.present?
+          .link.fork= link_to 'Fork', fork_paste_path(@paste) 
+          .link.new=  link_to 'New', new_paste_path
+      - else 
+        .link.new=  link_to 'New', new_paste_path
+      .link.home= link_to 'Home', root_path
     %article
       = yield
     %footer

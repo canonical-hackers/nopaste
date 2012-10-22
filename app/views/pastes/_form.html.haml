@@ -1,4 +1,4 @@
-.nopaste_form
+%section.paste_form
   = form_for(@paste) do |f|
     - if @paste.errors.any?
       #error_explanation
@@ -19,4 +19,7 @@
       = f.select :language, Paste::LANGS.collect{ |l| [ l, l]}, {:selected => @paste.language || 'Text'}
     .textarea
       = f.text_area :content
+    - if @original.present?
+      = f.hidden_field :original_id, :value => @original.uuid
+
     = f.submit

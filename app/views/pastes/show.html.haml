@@ -3,10 +3,17 @@
     = @paste.description
     - unless @paste.language == 'Text'
       (#{@paste.language})
+
   %h3 
     Pasted #{time_ago_in_words(@paste.created_at)} ago by #{@paste.author || 'Anonymous'}  
+  - if @original.present?
+    %h4 Forked from #{link_to @original.description, @original}.
+  - if @forks.present? 
+    %h4 
+      Forks: 
+      - @forks.each do |fork| 
+        = link_to fork.id, fork
   :coderay
     #!#{@paste.language} 
     #{@paste.content}
  
-= link_to 'Edit', edit_paste_path(@paste) 

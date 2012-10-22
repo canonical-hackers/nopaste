@@ -3,23 +3,27 @@ class PastesController < ApplicationController
 
   def index
     @pastes = Paste.all
-
     respond_with(@pastes)
   end
 
   def show
     @paste = Paste.find(params[:id])
+    @original = @paste.original
+    @forks = @paste.forks
     respond_with(@paste)
   end
 
   def new
     @paste = Paste.new
-
     respond_with(@paste)
   end
 
-  def edit
-    @paste = Paste.find(params[:id])
+  def fork
+    @original = Paste.find(params[:id])
+    @paste = Paste.new( :content => @original.content, 
+                        :description => @original.description,
+                        :language => @original.language)
+    @paste.original = @original
   end
 
   def create
