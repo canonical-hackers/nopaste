@@ -92,5 +92,11 @@
       cursor: pointer;
     }
   }
+  input[type="submit"].private { 
+    background-image: url('field_lock.png');
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    background-position: 5px 2px;
+  }
 }
 

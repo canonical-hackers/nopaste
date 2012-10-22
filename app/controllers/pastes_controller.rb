@@ -2,7 +2,7 @@ class PastesController < ApplicationController
   respond_to :html, :js
 
   def index
-    @pastes = Paste.all
+    @pastes = Paste.public
     respond_with(@pastes)
   end
 
@@ -28,7 +28,8 @@ class PastesController < ApplicationController
 
   def create
     @paste = Paste.new(params[:paste])
-    
+    @paste.private = true if params[:commit].match(/Private/)
+
     flash[:notice] = 'Paste was successfully created.' if @paste.save 
     respond_with(@paste)
   end

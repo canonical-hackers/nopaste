@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022032041) do
+ActiveRecord::Schema.define(:version => 20121022223256) do
 
   create_table "pastes", :id => false, :force => true do |t|
     t.string   "uuid",        :limit => 36
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20121022032041) do
     t.string   "description"
     t.string   "author"
     t.string   "original_id"
+    t.boolean  "private",                   :default => false
   end
 
 end

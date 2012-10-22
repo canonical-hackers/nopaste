@@ -5,7 +5,7 @@
       (#{@paste.language})
 
   %h3 
-    Pasted #{time_ago_in_words(@paste.created_at)} ago by #{@paste.author || 'Anonymous'}  
+    Pasted #{time_ago_in_words(@paste.created_at)} ago by #{@paste.author}  
   - if @original.present?
     %h4 Forked from #{link_to @original.description, @original}.
   - if @forks.present? 

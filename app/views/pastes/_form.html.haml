@@ -22,4 +22,5 @@
     - if @original.present?
       = f.hidden_field :original_id, :value => @original.uuid
 
-    = f.submit
+    = f.submit "Create Paste", :class => 'public'
+    = f.submit "Create Private Paste", :class => 'private'

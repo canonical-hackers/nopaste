@@ -1,8 +1,8 @@
 %div[paste]
   .info 
-    = paste.author || 'Anonymous'
+    = paste.author
     pasted 
-    = link_to paste.description || 'and Untitled Paste', paste
+    = link_to paste.description, paste
     #{time_ago_in_words(paste.created_at)} ago.
   .actions 
     = link_to 'Fork', fork_paste_path(paste)
