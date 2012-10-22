@@ -12,16 +12,17 @@
     padding: 3px;
     box-shadow: 0 0 10px black;
     .line-numbers { 
+      vertical-align: top;
       padding-right: 10px;
       a { text-decoration: none; }
     }
     .code { 
+      vertical-align: top;
       width: 800px; 
       pre { 
         width: 750px;
-        overflow: scroll;
+        overflow: auto;
       } 
-      vertical-align: top;
     }
   }
 }
