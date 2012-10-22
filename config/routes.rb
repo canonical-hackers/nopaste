@@ -1,7 +1,8 @@
 Nopaste::Application.routes.draw do
   resources :pastes do
     member do
-      match 'fork' => 'pastes#fork'
+      get 'fork'
+      get 'raw'
     end
   end
 

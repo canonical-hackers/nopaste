@@ -12,6 +12,13 @@ class PastesController < ApplicationController
     @forks = @paste.forks
     respond_with(@paste)
   end
+  
+  def raw
+    @paste = Paste.find(params[:id])
+    respond_with @paste do |format| 
+      format.html { render :layout => false } 
+    end
+  end
 
   def new
     @paste = Paste.new
