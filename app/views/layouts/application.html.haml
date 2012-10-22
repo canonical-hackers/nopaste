@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title Nopaste
+    %title
+      = yield(:title).present? ? "#{yield(:title)} — " : ''
+      Nopaste
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
