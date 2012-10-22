@@ -32,14 +32,7 @@ class PastesController < ApplicationController
   def update
     @paste = Paste.find(params[:id])
 
-    flash[:notice] = 'Paste was successfully updated.' if @paste.save 
+    flash[:notice] = 'Paste was successfully updated.' if @paste.update_attributes(params[:paste])
     respond_with(@paste)
-  end
-
-  def destroy
-    @paste = Paste.find(params[:id])
-    @paste.destroy
-    
-    redirect_to pastes_url
   end
 end
