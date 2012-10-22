@@ -5,6 +5,6 @@
     = link_to paste.description || 'and Untitled Paste', paste
     #{time_ago_in_words(paste.created_at)} ago.
   .actions 
-    = link_to 'Edit', edit_paste_path(paste)
+    = link_to 'Fork', fork_paste_path(paste)
 %br 
 
