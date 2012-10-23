@@ -12,17 +12,16 @@
  *= require_tree .
  */
 
-$bg_color_main: #111; 
-$bg_color_sub:  #333; 
+$bg_color_main: #111;
+$bg_color_sub:  #333;
 $text_color:    #CCC;
 
-body { 
+body {
   background-color: $bg_color_main;
   font-family: 'helvetica', sans-serif;
   color: $text_color;
 }
-
-nav { 
+nav {
   height: 30px;
   background-color: #444;
   position: fixed;
@@ -31,24 +30,9 @@ nav {
   right: 0;
   top: 0;
   box-shadow: 0 0 10px black;
-  .link { 
-    margin: 6px 10px;
-    float: right;
-    background-repeat: no-repeat;
-    a {
-      padding-left: 24px;
-      text-decoration: none;
-      color: white; 
-    }
-  }
-  .fork { background-image: url('link_fork.png'); }
-  .home { background-image: url('link_home.png'); }
-  .new  { background-image: url('link_new.png'); }
-  .raw  { background-image: url('link_raw.png'); }
 }
-
-article {  
-  background-color: $bg_color_sub; 
+article {
+  background-color: $bg_color_sub;
   width: 950px;
   box-shadow: 0 0 2px white;
   border-radius: 3px;
@@ -63,18 +47,29 @@ h2 {
   font-size: 28px;
   margin: 20px 0px 5px;
 }
-h3 { 
+h3 {
   font-weight: normal;
   margin: 0 0 10px 20px;
   font-size: 14px;
   font-style: italic;
 }
-
-a { 
+a {
   color: #999;
-  &:hover { 
+  &:hover {
     color: darkred;
-  } 
+  }
 }
-
-
+.link { 
+  margin: 6px 10px;
+  float: right;
+  background-repeat: no-repeat;
+  a {
+    padding-left: 24px;
+    text-decoration: none;
+    color: white; 
+  }
+}
+.fork { background-image: url('link_fork.png'); }
+.home { background-image: url('link_home.png'); }
+.new  { background-image: url('link_new.png'); }
+.raw  { background-image: url('link_raw.png'); }

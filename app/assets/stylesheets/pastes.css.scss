@@ -1,34 +1,72 @@
-.pastes { 
-
-}
-
-.paste {
-  width: 800px;
-  margin: auto;
-  .CodeRay { 
-    background-color: #111;
-    border-radius: 2px;
-    margin: 15px auto;
-    padding: 3px;
-    box-shadow: 0 0 10px black;
-    .line-numbers { 
-      vertical-align: top;
-      padding-right: 10px;
-      a { text-decoration: none; }
+#pastes_index {
+  background-color: #111;
+  box-shadow: 0 0 0 white;
+  .nopaste {
+    background-color: #333;
+    box-shadow: 0 0 2px white;
+  }
+  .pastes {
+    .paste {
+      height: 85px;
+      margin: 10px auto;
+      background-color: #333;
+      box-shadow: 0 0 2px white;
+      border-radius: 3px;
+      .language {
+        background-color: darkRed;
+        width: 75px;
+        height: 75px;
+        box-shadow: 0 0 2px black;
+        border-radius: 3px;
+        font-size: 28px;
+        text-align: center;
+        line-height: 70px;
+        margin: 5px;
+        float: left;
+      }
+      .info {
+        margin: 10px;
+        font-size: 24px;
+        height: 65px;
+        float: left;
+        width: 765px;
+      }
+      .actions {
+        width: 80px;
+        float: right;
+      }
     }
-    .code { 
-      vertical-align: top;
-      width: 800px; 
-      pre { 
-        width: 750px;
-        overflow: auto;
-      } 
+  }
+}
+#pastes_show {
+  .paste {
+    width: 800px;
+    margin: auto;
+    .CodeRay {
+      background-color: #111;
+      border-radius: 2px;
+      margin: 15px auto;
+      padding: 3px;
+      box-shadow: 0 0 10px black;
+      .line-numbers {
+        vertical-align: top;
+        padding-right: 10px;
+        a { text-decoration: none; }
+      }
+      .code {
+        vertical-align: top;
+        width: 800px;
+        pre {
+          width: 750px;
+          overflow: auto;
+        }
+      }
     }
   }
 }
 
 .paste_form {
-  width: 885px; 
+  width: 885px;
   margin: 0 auto;
   .field {
     height: 60px;
@@ -37,7 +75,7 @@
     margin: 3px 10px;
     input {
       border-radius: 3px;
-      border: 1px solid grey; 
+      border: 1px solid grey;
       border-image: initial;
       padding: 4px 0px 4px 10px;
       margin: 0;
@@ -48,7 +86,7 @@
     }
     select {
       border-radius: 3px;
-      border: 1px solid grey; 
+      border: 1px solid grey;
       border-image: initial;
       padding: 4px 4px 4px 10px;
       margin: 0;
@@ -57,7 +95,7 @@
       width: 265px;
       height: 30px;
     }
-    label { 
+    label {
       position: relative;
       top: 0px;
       left: 5px;
@@ -72,28 +110,28 @@
       text-shadow: none;
     }
   }
-  textarea { 
+  textarea {
     width: 835px;
     border: none;
     margin: 10px;
     padding: 10px;
     border-radius: 2px;
   }
-  input[type="submit"] { 
+  input[type="submit"] {
     border: 0;
     background: #222;
     color: white;
     font-size: 22px;
     border-radius: 3px;
     box-shadow: 0 0 3px black;
-    &:hover { 
+    &:hover {
       box-shadow: 0 0 2px darkred;
       background-color: darkred;
       text-shadow: 0 0 5px black;
       cursor: pointer;
     }
   }
-  input[type="submit"].private { 
+  input[type="submit"].private {
     background-image: url('field_lock.png');
     background-repeat: no-repeat;
     padding-left: 35px;

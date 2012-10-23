@@ -1,20 +1,19 @@
 - content_for :title, "#{@paste.description} by #{@paste.author}"
 %section[@paste]
-  %h2 
+  %h2
     = @paste.description
     - unless @paste.language == 'Text'
       (#{@paste.language})
 
-  %h3 
-    Pasted #{time_ago_in_words(@paste.created_at)} ago by #{@paste.author}  
+  %h3
+    Pasted #{time_ago_in_words(@paste.created_at)} ago by #{@paste.author}
   - if @original.present?
     %h4 Forked from #{link_to @original.description, @original}.
-  - if @forks.present? 
-    %h4 
-      Forks: 
-      - @forks.each do |fork| 
+  - if @forks.present?
+    %h4
+      Forks:
+      - @forks.each do |fork|
         = link_to fork.id, fork
   :coderay
-    #!#{@paste.language} 
+    #!#{@paste.language}
     #{@paste.content}
- 

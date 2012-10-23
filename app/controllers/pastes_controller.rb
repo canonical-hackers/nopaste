@@ -2,6 +2,7 @@ class PastesController < ApplicationController
   respond_to :html, :js
 
   def index
+    @paste = Paste.new
     @pastes = Paste.public
     respond_with(@pastes)
   end
@@ -12,11 +13,11 @@ class PastesController < ApplicationController
     @forks = @paste.forks
     respond_with(@paste)
   end
-  
+
   def raw
     @paste = Paste.find(params[:id])
-    respond_with @paste do |format| 
-      format.html { render :layout => false } 
+    respond_with @paste do |format|
+      format.html { render :layout => false }
     end
   end
 
@@ -27,7 +28,7 @@ class PastesController < ApplicationController
 
   def fork
     @original = Paste.find(params[:id])
-    @paste = Paste.new( :content => @original.content, 
+    @paste = Paste.new( :content => @original.content,
                         :description => @original.description,
                         :language => @original.language)
     @paste.original = @original
@@ -37,7 +38,7 @@ class PastesController < ApplicationController
     @paste = Paste.new(params[:paste])
     @paste.private = true if params[:commit].match(/Private/)
 
-    flash[:notice] = 'Paste was successfully created.' if @paste.save 
+    flash[:notice] = 'Paste was successfully created.' if @paste.save
     respond_with(@paste)
   end
 

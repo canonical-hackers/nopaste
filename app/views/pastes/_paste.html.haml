@@ -1,10 +1,13 @@
 %div[paste]
-  .info 
+  .language
+    = paste.language
+  .info
     = paste.author
-    pasted 
+    pasted
     = link_to paste.description, paste
     #{time_ago_in_words(paste.created_at)} ago.
-  .actions 
-    = link_to 'Fork', fork_paste_path(paste)
-%br 
+  .actions
+    .link.fork= link_to 'Fork', fork_paste_path(paste)
+    .link.raw=  link_to 'Raw', fork_paste_path(paste)
+  %br.clear
 
