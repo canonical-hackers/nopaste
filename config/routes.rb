@@ -1,4 +1,6 @@
 Nopaste::Application.routes.draw do
+  devise_for :users
+
   resources :pastes do
     member do
       get 'fork'

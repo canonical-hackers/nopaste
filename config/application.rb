@@ -21,6 +21,8 @@ module Nopaste
       g.template_engine :haml
     end
 
+    config.assets.initialize_on_precompile = false
+
     Haml::Filters::CodeRay.encoder_options = {:line_numbers => :table}
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -10,7 +10,15 @@
   %body
     %header
       #notice= notice
+      #alert= alert
     %nav
+      .user_control
+        - if user_signed_in?
+          .link.logout= link_to "Logout", destroy_user_session_path
+          .link.account= link_to "Edit Account", edit_user_registration_path
+        - else 
+          .link.login= link_to "Login", new_user_session_path
+          .link.signup= link_to "Sign Up", new_user_registration_path
       - if @paste.present?
         - if @paste.uuid.present?
           .link.fork= link_to 'Fork', fork_paste_path(@paste)
