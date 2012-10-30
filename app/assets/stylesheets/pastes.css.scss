@@ -1,10 +1,6 @@
 #pastes_index {
   background-color: #111;
   box-shadow: 0 0 0 white;
-  .nopaste {
-    background-color: #333;
-    box-shadow: 0 0 2px white;
-  }
   .pastes {
     .paste {
       height: 85px;
@@ -12,7 +8,9 @@
       background-color: #333;
       box-shadow: 0 0 2px white;
       border-radius: 3px;
+      padding: 0px;
       .language {
+        overflow: hidden;
         background-color: darkRed;
         width: 75px;
         height: 75px;
@@ -116,6 +114,7 @@
     margin: 10px;
     padding: 10px;
     border-radius: 2px;
+    font-family: 'courier', 'monospace';
   }
   input[type="submit"] {
     border: 0;

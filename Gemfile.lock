@@ -120,7 +120,7 @@ PLATFORMS
 DEPENDENCIES
   coderay
   coffee-rails (~> 3.2.1)
-  devise
+  devise (= 2.1.2)
   haml
   haml-coderay
   jquery-rails

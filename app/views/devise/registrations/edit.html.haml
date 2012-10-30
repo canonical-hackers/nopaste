@@ -1,0 +1,31 @@
+%section.nopaste_form.nopaste
+  = form_for(resource, :as => resource_name, 
+                       :url => registration_path(resource_name), 
+                       :html => { :method => :put }) do |f|
+    = devise_error_messages!
+    %h4 User Info
+    .field   
+      = f.label :name, "Display Name"
+      = f.text_field :name
+    .field   
+      = f.label :email
+      = f.email_field :email
+    %h4 Change Password
+    .field   
+      = f.label :password, 'New Password'
+      = f.password_field :password, :autocomplete => "off"
+    .field   
+      = f.label :password_confirmation, 'New Password Confirmation'
+      = f.password_field :password_confirmation
+    %h4 We need your Current Password
+    .field   
+      = f.label :current_password
+      = f.password_field :current_password
+    = f.submit "Update"
+  %h1 Cancel my account
+  %p
+    Unhappy?
+    = link_to "Cancel my account", 
+              registration_path(resource_name), 
+              :data => { :confirm => "Are you sure?" }, 
+              :method => :delete

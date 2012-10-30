@@ -1,0 +1,8 @@
+#devise_links
+  %ul
+    - if devise_mapping.recoverable? && controller_name != 'passwords'
+      %li= link_to "Forgot your password?", forgot_path
+    - if devise_mapping.confirmable? && controller_name != 'confirmations'
+      %li= link_to "Didn't receive confirmation instructions?"
+    - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+      %li= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)

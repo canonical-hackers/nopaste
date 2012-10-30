@@ -37,6 +37,7 @@ class PastesController < ApplicationController
   def create
     @paste = Paste.new(params[:paste])
     @paste.private = true if params[:commit].match(/Private/)
+    @paste.user = current_user
 
     flash[:notice] = 'Paste was successfully created.' if @paste.save
     respond_with(@paste)

@@ -1,11 +1,14 @@
 class Paste < ActiveRecord::Base
   attr_accessible :content, :language, :author, :description, :original_id
+
+  belongs_to :user
   belongs_to :original, :class_name => 'Paste', :foreign_key => :original_id
   validates_presence_of :content, :language
   before_create :set_uuid
 
   self.primary_key = :uuid
-
+  
+  delegate :username, :to => :user
 
   LANGS = ['Text', 'Ruby', 'Perl', 'Python', 'PHP', 'C', 'C++', 'Java',
            'Bash', 'CSS', 'HTML', 'Javascript', 'JSON', 'YAML']
@@ -16,6 +19,7 @@ class Paste < ActiveRecord::Base
   end
 
   def author
+    return self.username if self.user.present?
     return 'Anonymous' if read_attribute(:author).empty?
     super
   end

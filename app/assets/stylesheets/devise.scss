@@ -1,0 +1,81 @@
+.nopaste_form { 
+  input[type="submit"] {
+    border: 0;
+    background: #222;
+    color: white;
+    font-size: 22px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px black;
+    margin: 10px;
+    margin-left: 190px;
+    &:hover {
+      box-shadow: 0 0 2px darkred;
+      background-color: darkred;
+      text-shadow: 0 0 5px black;
+      cursor: pointer;
+    }
+  }
+  width: 300px;
+  h2, h3, h4 { 
+    border-bottom: 2px solid darkred; 
+  }
+  h2 { 
+    margin: 5px 0 10px;
+    padding-left: 10px;
+  }
+  h4 { 
+    float: left;
+    width: 275px;
+    margin: 15px 5px 0;
+    padding-left: 10px;
+  }
+  .field {
+    height: 60px;
+    width: 275px;
+    float: left;
+    margin: 3px 10px;
+    input {
+      border-radius: 3px;
+      border: 1px solid grey;
+      border-image: initial;
+      padding: 4px 0px 4px 10px;
+      margin: 0;
+      outline: none;
+      font-size: 16px;
+      width: 265px;
+      height: 20px;
+    }   
+    select {
+      border-radius: 3px;
+      border: 1px solid grey;
+      border-image: initial;
+      padding: 4px 4px 4px 10px;
+      margin: 0;
+      outline: none;
+      font-size: 16px;
+      width: 265px;
+      height: 30px;
+    }   
+    label {
+      position: relative;
+      top: 0px;
+      left: 5px;
+      bottom: 1px;
+      right: 1px;
+      display: block;
+      width: 260px;
+      height: 20px;
+      font-size: 16px;
+      padding: 4px;
+      color: #888;
+      text-shadow: none;
+    }   
+  }
+  .checkbox { 
+    height: 25px;
+    width: 275px;
+    float: left;
+    margin: 3px 10px;
+
+  }
+}

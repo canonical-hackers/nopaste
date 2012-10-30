@@ -29,6 +29,9 @@ nav {
   }
 }
 article {
+  margin-top: 55px;
+}
+.nopaste { 
   background-color: $bg_color_sub;
   width: 950px;
   box-shadow: 0 0 2px white;
@@ -65,6 +68,10 @@ a {
     text-decoration: none;
     color: white; 
   }
+}
+.clear { 
+  background-color: none;
+  box-shadow: 0 0 0 white;
 }
 .fork    { background-image: url('link_fork.png'); }
 .home    { background-image: url('link_home.png'); }
