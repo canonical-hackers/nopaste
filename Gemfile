@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',        '~> 3.2.13'
 gem 'mysql2',       '~> 0.3.13'
-gem 'devise',       '~> 2.1.2'
+gem 'devise',       '~> 2.2.6'
 gem 'haml',         '~> 4.0.3'
 gem 'sass',         '~> 3.2.10'
 gem 'coderay',      '~> 1.0.9'
