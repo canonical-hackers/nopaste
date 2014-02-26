@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails',        '~> 3.2.16'
-gem 'mysql2',       '~> 0.3.13'
+gem 'rails',        '~> 3.2.17'
+gem 'mysql2',       '~> 0.3.15'
 gem 'devise',       '~> 2.2.6'
-gem 'haml',         '~> 4.0.3'
-gem 'sass',         '~> 3.2.10'
-gem 'coderay',      '~> 1.0.9'
+gem 'haml',         '~> 4.0.4'
+gem 'sass',         '~> 3.2.14'
+gem 'coderay',      '~> 1.1.0'
 gem 'haml-coderay', '~> 0.2.0'
-gem 'pg',           '~> 0.16.0'
+gem 'pg'
 gem 'json',         '~> 1.8.0'
 
 # Gems used only for assets and not required
