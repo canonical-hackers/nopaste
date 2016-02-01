@@ -1,0 +1,16 @@
+addons:
+    code_climate:
+        repo_token: 4294a8c4784dbcbd72d6ec067ea01277453107f9ed2690fc31cb039ca5d63974
+language: ruby
+before_install:
+  - gem update --system
+  - gem update bundler
+rvm:
+  - 2.2.3
+matrix:
+  fast_finish: true
+services: postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:migrate RAILS_ENV=test

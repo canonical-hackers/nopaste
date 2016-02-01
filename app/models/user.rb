@@ -7,14 +7,11 @@ class User < ActiveRecord::Base
 
   has_many :pastes
 
-  validates_presence_of :username  
-  validates_uniqueness_of :username
-  validates_length_of :username, :within => 3..20, 
-                      :too_long => "is too long", :too_short => "is too short"
-  validates_format_of :username, :with => /\A\w+\z/, 
-                      :message => 'may only contain numbers and letters'
-
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, 
-                  :remember_me, :username
+  validates :username, presence: true,
+                       uniqueness: true,
+                       length: { in: 3..20,
+                                 too_long: 'is too long',
+                                 too_short: 'is too short' },
+                       format: { with: /\A\w+\z/,
+                                 message: 'may only contain numbers and letters' }
 end
