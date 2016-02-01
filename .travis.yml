@@ -1,6 +1,6 @@
 addons:
     code_climate:
-        repo_token: 4294a8c4784dbcbd72d6ec067ea01277453107f9ed2690fc31cb039ca5d63974
+        repo_token: ec3bd76ba5f8dbc8bfb0d441b6aef17f92ad15f60996d46094583c5a92968379
 language: ruby
 before_install:
   - gem update --system
