@@ -12,13 +12,17 @@ gem 'json',         '~> 1.8.0'
 gem 'jquery-rails'
 gem 'coffee-script'
 
-group :development, :test do
-  gem 'codeclimate-test-reporter', require: nil
+group :development do
   gem 'byebug'
+  gem 'guard-rspec', require: false
+  gem 'spring'
+  gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner', "~> 1.2.0"
   gem 'guard-rspec', require: false
-  gem 'spring'
-  gem 'web-console', '~> 2.0'
 end
